@@ -1,0 +1,38 @@
+apiVersion: apps/v1
+kind: deployment
+metadata:
+  name: url-shortener
+spec:
+  replicas: REPLICA
+  selector:
+    matchLabels:
+      app: url-shortener
+  template:
+    metadata:
+      labels:
+        app: url-shortener
+    spec:
+      containers:
+        - name: url-shortener
+          image: CONTAINER_IMAGE:CONTAINER_TAG
+          ports:
+            - containerPort: 80
+              protocol: TCP
+
+---
+apiVersion: apps/v1
+kind: deployment
+metadata:
+  name: mongodb
+spec:
+  selector:
+    matchLabels:
+      app: mongodb
+  template:
+    metadata:
+      labels:
+        app: mongodb
+    spec:
+      containers:
+        - name: mongodb
+          image: mongo

@@ -7,13 +7,13 @@ npm install
 npm start
 ```
 
+
 ## Procedures
 
-```
 1. Hit the POST endpoint /newurl
 2. Grab the shortened id from the response eg: "https://shortenurl.org/feETSCPk", the shortened id is "feETSCPk"
 3. Append the shortened id and hit the url on the browser eg: http://localhost:4000/feETSCPk
-```
+
 
 ## Quick start in local
 
@@ -23,3 +23,16 @@ npm start
 - Create .env file, editing MONGO_URI in `.env` and `docker-compose.yaml`
 - Build url_shortener image: `docker build -t url_shortener . `
 - Spin up the set: `docker-compose up -d`
+
+
+## Infrastructure
+
+- Infrastructure related code are stored in `./infra`
+- The application will sit behind Load Balancer. Request will be handled by Load Balancer before hitting application
+- Replace `CONTAINER_IMAGE` and `CONTAINER_TAG` according to your registry before the deployment
+- Replace `REPLICA` according to your desired bandwidth
+
+## Enhancement
+
+- Mongodb can be more secure by creating authentication.
+- Mongodb can be replaced by other cache database e.g Elasticahe server to help in infrastructure management 
