@@ -19,7 +19,6 @@ npm start
 
 ### Prerequisite
 
-```
 - Install docker and docker-compose
 - Create .env file, editing MONGO_URI in `.env` and `docker-compose.yaml`
 - Build url_shortener image: `docker build -t url_shortener . `
