@@ -34,5 +34,5 @@ npm start
 
 ## Enhancement
 
-- Mongodb can be more secure by creating authentication.
-- Mongodb can be replaced by other cache database e.g Elasticahe server to help in infrastructure management 
+- MongoDB can be more secure by creating authentication.
+- Self-hosted MongoDB can be replaced by dedicated database e.g DynamoDB/MongoDB atlas to help in infrastructure management 
